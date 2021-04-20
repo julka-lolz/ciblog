@@ -2,7 +2,8 @@
     <head>
         <title>ciBlog</title>
         <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
-        <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
+        <!-- ?v='.time() zorgd ervoor dat je de laatste versie krijgt van de file die je wilt ontvangen -->
+        <link rel="stylesheet" href="<?= base_url('assets/css/style.css?v='.time()); ?>">
         <link rel="stylesheet" href="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>">
         <link rel="stylesheet" href="<?= base_url('assets/js/jquery.min.js'); ?>">
         <link rel="stylesheet" href="<?= base_url('assets/js/custom.js'); ?>">
@@ -19,10 +20,12 @@
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="<?= base_url(); ?>">Home</a></li>
                     <li><a class="nav-link" href="<?= base_url(); ?>about">About</a></li>
-                    <li><a class="nav-link" href="<?= base_url(); ?>posts">Blog</a></li>       
+                    <li><a class="nav-link" href="<?= base_url(); ?>posts">Blog</a></li>
+                    <li><a class="nav-link" href="<?= base_url(); ?>categories">Categories</a></li>       
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li><a class="nav-link" href="<?= base_url(); ?>posts/create">Create Post</a></li>
+                <li><a class="nav-link" href="<?= base_url(); ?>categories/create">Create Category</a></li>
                 </ul>
             </div>
         </div>

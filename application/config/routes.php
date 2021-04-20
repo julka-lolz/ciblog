@@ -1,17 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 $route['posts/create'] = 'posts/create';
 $route['posts/update'] = 'posts/update';
 $route['posts/(:any)'] = 'posts/view/$1';
 $route['posts'] = 'posts/index';
+
 $route['default_controller'] = 'pages/view';
+
+$route['categories'] = 'categories/index' ;
+$route['categories/create'] = 'categories/create';
+$route['categories/posts/(:any)'] = 'categories/posts/$1';
+
 /*
     De eerste onderstande code laat ons sneler kunnen zoeken naar een file.
     dus nu hoeven we niet "http://localhost:8080/ciblog/pages/view/about" de gebruiken,
     maar "http://localhost:8080/ciblog/about"
     zonder $1 gaat het niet werken,
-    $1 represents anything.
+    $1 represents anything/ is a placeholder.
 */
 $route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';

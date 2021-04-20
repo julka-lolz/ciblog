@@ -13,7 +13,9 @@
         }
 
         public function view($slug = NULL){
-            $data['post'] = $this->post_model->get_posts($slug);            
+            $data['post'] = $this->post_model->get_posts($slug); 
+            $post_id = $data['post']['id']; 
+            $data['comments'] = $this->comment_model->get_comments($post_id);          
 
             if(empty($data['post'])){
                 show_404();
@@ -61,9 +63,9 @@
                 //als er een foto niet bestaat for upload dan krijgen we een error met 'noimage.jpg' voor $post_image
                 if(!$this->upload->do_upload('userfile')){
                     $errors = array('error' => $this->upload->display_errors());
-                    print_r($_FILES);
-                    print_r($errors); 
-                    exit();
+                    // print_r($_FILES);
+                    // print_r($errors); 
+                    // exit();
                     $post_image = 'noimage.jpg';
                 }else {
                     //als de foto bestaat dan krijgt $post_image de actuele naam van de foto die je toevoegt.
